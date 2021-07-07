@@ -48,7 +48,7 @@ class AuthenticationRepository(
                     chatReferences.userReferances().child(userId ?: "0")
                         .addValueEventListener(object : ValueEventListener {
                             override fun onCancelled(error: DatabaseError) {
-                                TODO("Not yet implemented")
+
                             }
 
                             override fun onDataChange(snapshot: DataSnapshot) {

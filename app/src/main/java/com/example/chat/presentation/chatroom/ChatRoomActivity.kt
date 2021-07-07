@@ -30,7 +30,7 @@ class ChatRoomActivity:AppCompatActivity(),ChatRoomView {
         setContentView(R.layout.activity_chat_room)
 
         val user = ChatPrefences.initPreferences(this).userInfo
-        mainToolbar.title ="CHAT"
+        mainToolbar.title ="EDE-CHAT"
 
         setSupportActionBar(mainToolbar)
         etMessage.addTextChangedListener(EditTextListener(btnSend))
