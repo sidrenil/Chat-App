@@ -33,7 +33,7 @@ class AdapterMessage(context: Context, private val listChat: List<Chat>) :
             }
             else -> {
                 val v = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.to_message, parent, false)
+                    .inflate(R.layout.from_message, parent, false)
                 HolderMessageFrom(v)
             }
         }

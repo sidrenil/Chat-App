@@ -7,6 +7,7 @@
     android:background="@color/white"
     tools:context="com.example.chat.presentation.chatroom.ChatRoomActivity">
 
+
 <LinearLayout
     android:layout_above="@id/chatText"
     android:orientation="vertical"

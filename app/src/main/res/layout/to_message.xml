@@ -18,29 +18,24 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:id="@+id/toUsername"
+            android:id="@+id/fromUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="8dp"
-            android:textColor="@color/white"
-            android:background="@color/black"
+            android:textColor="@color/black"
             android:gravity="end"
             android:textSize="14sp"
             android:textStyle="bold"
             tools:text="Username" />
 
-        <ImageView
-            android:id="@+id/icon_fb2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/pp" />
+
 
     </LinearLayout>
 
     <TextView
         android:layout_gravity="end"
-        android:id="@+id/toMessage"
+        android:id="@+id/fromMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

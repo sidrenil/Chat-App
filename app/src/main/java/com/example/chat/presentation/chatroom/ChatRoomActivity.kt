@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ScrollView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +24,7 @@ class ChatRoomActivity:AppCompatActivity(),ChatRoomView {
     private lateinit var adapterMessage: AdapterMessage
     private val chatRoomPresenter by inject<ChatRoomPresenter>()
     private var listChat:MutableList<Chat> =ArrayList()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +57,8 @@ class ChatRoomActivity:AppCompatActivity(),ChatRoomView {
 
             chatRoomPresenter.sendMessage(chat)
             etMessage?.setText("")
+
+
         }
             chatRoomPresenter.attachView(this)
             chatRoomPresenter.getMessages()

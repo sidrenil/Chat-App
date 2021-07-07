@@ -16,11 +16,7 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/icon_fb1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/pp" />
+
 
         <TextView
             android:id="@+id/fromUsername"
