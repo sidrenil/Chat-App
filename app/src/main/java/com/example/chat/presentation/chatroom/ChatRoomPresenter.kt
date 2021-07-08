@@ -1,8 +1,11 @@
 package com.example.chat.presentation.chatroom
 
+import androidx.recyclerview.widget.RecyclerView
 import com.example.chat.data.entity.Chat
 import com.example.chat.data.repository.database.MessageRepository
 import com.example.chat.data.repository.database.MessageRepositoryCallback
+import com.example.chat.presentation.chatroom.adapter.AdapterMessage
+
 
 class ChatRoomPresenter (private val messageRepository: MessageRepository){
 
@@ -18,13 +21,14 @@ class ChatRoomPresenter (private val messageRepository: MessageRepository){
         this.view = null
     }
 
-    fun getMessages(){
+    fun getMessages(chatRecycler:RecyclerView, adapter:AdapterMessage){
         messageRepository.getMessage(object : MessageRepositoryCallback{
             override fun onMessageComing(chat: Chat) {
                 if (chatPosition == 0){
                     view?.onMessageComing(chat.copy(
                         isSameUser = false
                     ))
+
                 }
                 else{
                     val before= messages[chatPosition -1].user
@@ -34,6 +38,8 @@ class ChatRoomPresenter (private val messageRepository: MessageRepository){
                 }
                 messages.add(chat)
                 chatPosition++
+                chatRecycler.smoothScrollToPosition(adapter.itemCount -1)
+
             }
 
             override fun onMessageUpdate(position: Int, chat: Chat) {

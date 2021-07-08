@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ScrollView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.chat.R
 import com.example.chat.common.Constant
 import com.example.chat.common.EditTextListener
@@ -25,12 +25,11 @@ class ChatRoomActivity:AppCompatActivity(),ChatRoomView {
     private val chatRoomPresenter by inject<ChatRoomPresenter>()
     private var listChat:MutableList<Chat> =ArrayList()
 
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+        override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
+        val chatRecycler:RecyclerView= findViewById(R.id.chat)
         val user = ChatPrefences.initPreferences(this).userInfo
         mainToolbar.title ="EDE-CHAT"
 
@@ -57,11 +56,12 @@ class ChatRoomActivity:AppCompatActivity(),ChatRoomView {
 
             chatRoomPresenter.sendMessage(chat)
             etMessage?.setText("")
-
-
+            chatRecycler.smoothScrollToPosition(adapterMessage.itemCount+1)
         }
+
+
             chatRoomPresenter.attachView(this)
-            chatRoomPresenter.getMessages()
+            chatRoomPresenter.getMessages(chatRecycler, adapterMessage)
     }
 
     override fun onMessageComing(chat: Chat) {

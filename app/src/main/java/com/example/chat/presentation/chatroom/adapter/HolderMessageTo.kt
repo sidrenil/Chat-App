@@ -12,7 +12,7 @@ class HolderMessageTo(override val containerView: View?) :
     RecyclerView.ViewHolder(containerView as View), LayoutContainer {
 
     fun bindChatContent(chat: Chat) {
-        val usernameGroup = containerView?.findViewById<LinearLayout>(R.id.fromUsernameGroup)
+        val usernameGroup = containerView?.findViewById<LinearLayout>(R.id.toUsernameGroup)
         val userName = containerView?.findViewById<TextView>(R.id.fromUsername)
         val fromMessage = containerView?.findViewById<TextView>(R.id.fromMessage)
 
