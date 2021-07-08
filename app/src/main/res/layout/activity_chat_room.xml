@@ -14,10 +14,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <androidx.appcompat.widget.Toolbar
+
     android:id="@+id/mainToolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="#e8f0fb"
     android:theme="@style/ThemeOverlay.AppCompat.Light"
     android:elevation="2dp"/>
 
