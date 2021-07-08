@@ -13,8 +13,8 @@ class HolderMessageTo(override val containerView: View?) :
 
     fun bindChatContent(chat: Chat) {
         val usernameGroup = containerView?.findViewById<LinearLayout>(R.id.toUsernameGroup)
-        val userName = containerView?.findViewById<TextView>(R.id.fromUsername)
-        val fromMessage = containerView?.findViewById<TextView>(R.id.fromMessage)
+        val userName = containerView?.findViewById<TextView>(R.id.toUsername)
+        val fromMessage = containerView?.findViewById<TextView>(R.id.toMessage)
 
 
 

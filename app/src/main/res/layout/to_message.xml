@@ -18,7 +18,7 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:id="@+id/fromUsername"
+            android:id="@+id/toUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -35,7 +35,7 @@
 
     <TextView
         android:layout_gravity="end"
-        android:id="@+id/fromMessage"
+        android:id="@+id/toMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
