@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,57 +8,81 @@
     android:id="@+id/rootView"
     android:focusableInTouchMode="true">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
-        <LinearLayout
+            android:id="@+id/newImage"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/registerImage"
                 android:layout_width="150dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/pp" />
+                android:layout_height="150dp"
+                app:layout_constraintBottom_toBottomOf="@id/registerButton"
+                app:layout_constraintEnd_toEndOf="@id/registerButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/registerButton"
+                app:layout_constraintTop_toTopOf="@id/registerButton"
+                app:layout_constraintVertical_bias="0.0" />
 
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/edit_text"
+                android:text="Resim Seç"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
             <ProgressBar
                 android:id="@+id/loading"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:indeterminate="true"
                 android:visibility="gone"
-                android:layout_marginBottom="20dp"/>
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerImage"/>
             <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
                 android:id="@+id/inputUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/regisUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Username"
-                    android:inputType="textPersonName|textNoSuggestions"
-                    android:maxLines="1" />
+                app:layout_constraintTop_toBottomOf="@+id/loading">
+            <EditText
+                android:id="@+id/regisUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName|textNoSuggestions"
+                android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputUsername"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -77,6 +102,9 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 app:passwordToggleEnabled="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputEmail"
                 app:passwordToggleTint="#555672">
 
                 <EditText
@@ -95,6 +123,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPass"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#555672">
 
@@ -112,7 +143,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassConfirm"
                 android:layout_marginTop="20dp"
+
                 android:background="#555672"
                 android:text="SIGN UP"
                 android:textColor="#fff" />
@@ -126,8 +161,5 @@
                 android:text="hesabınız varsa buraya tıklayın"
                 android:textStyle="italic" />
 
-        </LinearLayout>
-    </ScrollView>
-
-
+    </LinearLayout>
 </RelativeLayout>
